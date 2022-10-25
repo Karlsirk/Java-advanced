@@ -6,39 +6,42 @@ import java.util.Random;
  * Person model
  * Example of Encapsulation
  *
- * @author Karl Sirkas
+ * @author Vinod John
  */
 public class Person {
     // Fields
-private Long id;
-private String FirstName;
-private String LastName;
-private String email;
-private String phoneNumber;
-private String address;
+    private Long id;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String phoneNumber;
+    private String address;
 
     // All arguments constructor
     public Person(Long id, String firstName, String lastName, String email, String phoneNumber, String address) {
         this.id = id;
-        FirstName = firstName;
-        LastName = lastName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.address = address;
     }
 
-    public Person(Long id, String address){
+    // Parameterized constructor
+    public Person(Long id, String address) {
         this.id = id;
         this.address = address;
     }
 
-    //Java will create a constructor automatically by default. It is called as default constructor.
+    //Java will create a constructor automatically by default. it is called as default constructor.
 
     //No-Arg constructor
-    public Person(){
+    public Person() {
         this.id = new Random().nextLong();
     }
 
+
+    //Getters and Setters
     public Long getId() {
         return id;
     }
@@ -48,19 +51,21 @@ private String address;
     }
 
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
-        FirstName = firstName;
+        if(!firstName.isEmpty()) {
+            this.firstName = firstName;
+        }
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -87,15 +92,17 @@ private String address;
         this.address = address;
     }
 
+
     @Override
     public String toString() {
         return "Person{" +
                 "id=" + id +
-                ", FirstName='" + FirstName + '\'' +
-                ", LastName='" + LastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", address='" + address + '\'' +
                 '}';
     }
+
 }
