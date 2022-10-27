@@ -6,7 +6,7 @@ import java.util.Random;
  * Person model
  * Example of Encapsulation
  *
- * @author Vinod John
+ * @author Karl Sirkas
  */
 public class Person {
     // Fields
@@ -15,7 +15,9 @@ public class Person {
     private String lastName;
     private String email;
     private String phoneNumber;
-    private String address;
+    private String address; //source address
+
+    protected boolean isAlive;
 
     // All arguments constructor
     public Person(Long id, String firstName, String lastName, String email, String phoneNumber, String address) {
@@ -92,6 +94,13 @@ public class Person {
         this.address = address;
     }
 
+    protected boolean isAlive() {
+        return isAlive;
+    }
+
+    protected void setAlive(boolean alive) {
+        isAlive = alive;
+    }
 
     @Override
     public String toString() {

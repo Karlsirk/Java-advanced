@@ -5,7 +5,7 @@ public class PrivatePassenger extends Passenger {
     private boolean isPrivate;
     private String personalIDCode;
 
-    public PrivatePassenger(String paymentType, String destinationAddress) {
+    public PrivatePassenger(PaymentType paymentType, String destinationAddress) {
         super(paymentType, destinationAddress);
     }
 
